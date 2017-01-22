@@ -6,6 +6,14 @@ An API server in NODEJS that will control multiple yeelights
 - Yeelight bulbs
 - [Enable developer mode in yeelight bulbs](http://www.yeelight.com/en_US/developer)
 
+## What we use
+
+- We use HAPI for API
+- We use YARN for package controller
+- We use yeelight-wifi as base command options
+- We use babel to make this project compatible with ES6 (specially for import)
+- We use bluebird for promises
+
 ## Actions
 
 Right now the software allow us four actions:

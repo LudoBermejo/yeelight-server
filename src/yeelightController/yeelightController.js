@@ -1,6 +1,6 @@
-const YeelightSearch = require('yeelight-wifi');
-const winston = require('winston');
-const Promise = require('bluebird');
+import YeelightSearch from 'yeelight-wifi';
+import winston from 'winston';
+import Promise from 'bluebird';
 
 const bulbs = [];
 
