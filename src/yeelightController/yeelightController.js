@@ -38,8 +38,26 @@ function actionInBulb(lightBulb, action, params) {
     .map(item => mapInfoBulb(item));
 }
 
+function actionInBulbs(action, params) {
+  return bulbs
+    .map((item) => {
+      item[action](params);
+      return true;
+    })
+    .map(item => mapInfoBulb(item));
+}
+
+
 function turnOn(lightBulb) {
   return actionInBulb(lightBulb, 'turnOn');
+}
+
+function turnOnAllBulbs() {
+  return actionInBulbs('turnOn');
+}
+
+function turnOffAllBulbs() {
+  return actionInBulbs('turnOff');
 }
 
 function turnOff(lightBulb) {
@@ -94,6 +112,8 @@ module.exports = {
   complete,
   error,
   turnOn,
+  turnOnAllBulbs,
+  turnOffAllBulbs,
   turnOff,
   changeColor,
   getBulbs,

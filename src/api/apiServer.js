@@ -28,6 +28,22 @@ function init() {
 
   server.route({
     method: 'POST',
+    path: '/api/v1/bulbs/turnOn',
+    handler: (request, reply) => {
+      reply(YeelightController.turnOnAllBulbs());
+    },
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/api/v1/bulbs/turnOff',
+    handler: (request, reply) => {
+      reply(YeelightController.turnOffAllBulbs());
+    },
+  });
+
+  server.route({
+    method: 'POST',
     path: '/api/v1/bulbs/turnOn/{bulbs}',
     handler: (request, reply) => {
       reply(YeelightController.turnOn(request.params.bulbs));
